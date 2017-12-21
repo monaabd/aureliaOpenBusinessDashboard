@@ -1,0 +1,90 @@
+<template>
+  <style>
+
+      .container{
+       // background-color:rgb(202, 205, 206);
+        background-color: transparent;
+      }
+
+      // row
+      .wrapper {
+        background-color:rgb(207, 207, 207);
+      }
+
+      .panel{
+        border:3px solid rgb(207, 207, 207);
+      }
+
+      .panel-default>.panel-heading {
+
+        background-color:transparent;
+      }
+      .vdivide {
+        display: flex;
+        //align-items: center;
+        justify-content: center;
+         //float:none;
+
+      }
+
+       a{
+        color:black;
+        font-size:12px;
+      }
+
+        .details {
+        color:rgb(158, 155, 155);
+        font-size:12px;
+        }
+
+       .notice { color: rgb(233, 15, 15);}
+
+  </style>
+  <!-- <div class="row wrapper"> -->
+   <!-- <div class="col-lg-6"> -->
+    <div class="panel panel-default" style="padding:14px;">
+       <div class="panel-heading">Översikt</div>
+
+            <div class="row vdivide">
+              <div class="col-sm-6 text-center "style="padding-right:0px;padding-left:0px;border-right:1px solid rgb(216, 212, 212);border-bottom:1px solid rgb(216, 212, 212);">
+                 <a click.delegate="$parent.navigate(item)" class="au-target uppercase dropdown-toggle" au-target-id="164" id="Toolbar__menu__1" href="#/customer-invoice">
+                 <!-- <a click.delegate="$parent.navigate(item)" class="au-target uppercase dropdown-toggle" au-target-id="164" id="Toolbar__menu__1" href="#/customer-invoice"> -->
+                    <p> Förfallna kundfakturor</p>
+                    <p><h3>${totalCountOfCustomerExpiredInvoices}</h3></p>
+                    <p class="details">${totalAmountLeftToPayCustomer} kr</p>
+                </a>
+                  </div> <!--sm col6-->
+
+             <div class="col-sm-6 text-center" style="border-bottom:1px solid rgb(216, 212, 212);">
+                  <a click.delegate="$parent.navigate(item)" class ="au-target uppercase dropdown-toggle"  au-target-id="164" id="Toolbar__menu__1" href="#/accounting/account-reconciliation/account-tallying" >
+                    <p>Nya Bankhändelser att bokföra</p>
+                    <p><h3>${bankTallying}</h3></p>
+                    <p class="details"> Bankkonto nummer ${bankTayllingAccountNumber} </p>
+                 </a>
+            </div>
+         </div>
+         <div class="row vdivide">
+              <div class="col-sm-6 text-center "style="padding-top:10px;">
+                <a click.delegate="$parent.navigate(item)" class ="au-target uppercase dropdown-toggle"  au-target-id="164" id="Toolbar__menu__1" href="#/supplier-invoice" >
+                 <p>Förfallna leverantörsfakturor</p>
+                 <h3>${totalCountOfSupplierExpiredInvoices}</h3>
+                 <p class="details">${totalAmountLeftToPaySupplier} kr</p>
+              </a>
+            </div>
+
+            <div class="col-sm-6 text-center "style="border-left:1px solid rgb(216, 212, 212);padding-top:10px;">
+                  <!--div class="part4"-->
+                  <p><a href="" target="_blank"> </a></p>
+                  <p><h3></h3></p>
+
+         </div>
+      </div>
+    <!-- </div> -->
+
+ <!-- </div> col lg6 översikt -->
+</div>
+
+<!-- <p><a href="" target="_blank"> Förfallna kundfakturor</a></p>
+<p><h3>${totalCountOfExpiredInvoices}</h3></p>
+<p class="details">${totalAmountLeftToPayCustomer} kr</p> -->
+</template>
